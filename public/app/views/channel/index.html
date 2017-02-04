@@ -1,0 +1,41 @@
+<nav class="navbar navbar-default navbar-fixed" style="position: fixed; width: 100%">
+    <div class="container-flui@d">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                #<span data-bind="text: name">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="separator hidden-lg hidden-md"></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="messages" class="container-fluid" style="padding-top: 60px; margin-bottom: 80px">
+  <!-- ko foreach: messages -->
+    <div class="message-box" >
+      <span data-bind="text: owner.username"></span> :
+      <div data-bind="text: content"></div>
+    </div>
+  <!-- /ko -->
+</div>
+<div class="panel-footer" style="position: fixed; bottom: 0px; padding: 15px 15px 0px 15px;">
+  <div class="message">
+    <div class="form-group">
+      <div class="input-group">
+        <input data-bind="textInput : entry, event: {keypress: enterPost}" class="form-control"/>
+        <div class="btn btn-primary input-group-addon" data-bind="click: Post" ><i class="fa fa-send"></i></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<nav class="navbar navbar-default navbar-fixed">
+    <div class="container-flui@d">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <i class="fa fa-slack"></i> Channel List
+            </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a style="cursor: pointer" data-bind="click: CreateChannel">
+                        <i class="pe-7s-plus"></i> Create new channel
+                    </a>
+                </li>
+                <li class="separator hidden-lg hidden-md"></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="content" style="margin-top: 20px">
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- ko foreach: channels -->
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">
+                            #<span data-bind="text: name" ></span>
+                        </h4>
+                        <p class="category">Todo Topic</p>
+                    </div>
+                    <div class="content">
+                        <div class="footer">
+                            <a data-bind="attr : { href : '#/channel/' + name }" class="btn btn-primary btn-xs" style="width: 100%">Join</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+</div>
