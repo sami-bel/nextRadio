@@ -13,8 +13,9 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var channel_routing_module_1 = require('./channel-routing.module');
+var channelPlayer_component_1 = require('./channelPage/components/channelPlayer.component');
 var channelsList_component_1 = require('./channelsList/components/channelsList.component');
-var channelPage_component_1 = require('./channelPage/channelPage.component');
+var channelPage_component_1 = require('./channelPage/components/channelPage.component');
 var channelsList_service_1 = require('./channelsList/service/channelsList.service');
 var ChannelModule = (function () {
     function ChannelModule() {
@@ -30,13 +31,14 @@ var ChannelModule = (function () {
             ],
             declarations: [
                 channelsList_component_1.ChannelsListComponent,
-                channelPage_component_1.ChannelPageComponent
+                channelPage_component_1.ChannelPageComponent, channelPlayer_component_1.ChannelPlayerComponent
             ],
             providers: [
                 channelsList_service_1.ChannelsListService
             ],
             exports: [
-                channelsList_component_1.ChannelsListComponent
+                channelsList_component_1.ChannelsListComponent,
+                channelPage_component_1.ChannelPageComponent, channelPlayer_component_1.ChannelPlayerComponent
             ]
         }), 
         __metadata('design:paramtypes', [])

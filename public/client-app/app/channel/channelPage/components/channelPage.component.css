@@ -1,0 +1,13 @@
+
+.player{
+    border: 1px solid #002A80;
+    height: 71vh;
+}
+.highlights{
+    border: 2px solid #c3325f;
+    height: 16vh;
+}
+.comment{
+    border: 2px solid #b03911;
+    height: 88vh;
+}

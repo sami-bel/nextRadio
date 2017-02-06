@@ -10,21 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require("@angular/router");
-var ChannelPageComponent = (function () {
-    function ChannelPageComponent(route) {
+var ChannelPlayerComponent = (function () {
+    function ChannelPlayerComponent(route) {
         this.route = route;
     }
-    ChannelPageComponent.prototype.ngOnInit = function () {
+    ChannelPlayerComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.subscribe(function (params) { _this.name = params['name']; });
     };
-    ChannelPageComponent = __decorate([
+    ChannelPlayerComponent = __decorate([
         core_1.Component({
-            template: "<div class=\"row\">\n                    <div class=\"col-md-8\">\n                        <div class=\"player\"> player</div>\n                        <div class=\"highlights\"> temps fort</div>\n                    </div>\n                    <div class=\"col-md-4\">comment</div>\n              </div>\n             \n        "
+            selector: 'ng-player',
+            template: "<div class=\"player-container\">\n                 <iframe class=\"player-video\" frameborder=\"0\" width=\"480\" height=\"270\" src=\"//www.dailymotion.com/embed/video/xgz4t1\" allowfullscreen></iframe><br />\n              </div>     \n        ",
+            styles: [".player-video {width:100%; height: 100%} .player-container{ height: 100%}"]
         }), 
         __metadata('design:paramtypes', [router_1.ActivatedRoute])
-    ], ChannelPageComponent);
-    return ChannelPageComponent;
+    ], ChannelPlayerComponent);
+    return ChannelPlayerComponent;
 }());
-exports.ChannelPageComponent = ChannelPageComponent;
-//# sourceMappingURL=channelPage.component.js.map
+exports.ChannelPlayerComponent = ChannelPlayerComponent;
+//# sourceMappingURL=channelPlayer.component.js.map

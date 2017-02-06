@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var channelsList_component_1 = require('./channelsList/components/channelsList.component');
-var channelPage_component_1 = require('./channelPage/channelPage.component');
+var channelPage_component_1 = require('./channelPage/components/channelPage.component');
 var channelRoutes = [
     { path: 'channels', component: channelsList_component_1.ChannelsListComponent },
     { path: 'channel/:name', component: channelPage_component_1.ChannelPageComponent }

@@ -3,9 +3,9 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import {ChannelRoutingModule} from './channel-routing.module';
-
+import {ChannelPlayerComponent} from './channelPage/components/channelPlayer.component';
 import { ChannelsListComponent } from './channelsList/components/channelsList.component';
-import {ChannelPageComponent} from './channelPage/channelPage.component'
+import {ChannelPageComponent} from './channelPage/components/channelPage.component'
 import { ChannelsListService } from './channelsList/service/channelsList.service';
 
 
@@ -20,7 +20,7 @@ import { ChannelsListService } from './channelsList/service/channelsList.service
     ],
     declarations: [
         ChannelsListComponent,
-        ChannelPageComponent
+        ChannelPageComponent,ChannelPlayerComponent
 
     ],
 
@@ -29,7 +29,8 @@ import { ChannelsListService } from './channelsList/service/channelsList.service
     ],
 
     exports:[
-        ChannelsListComponent
+        ChannelsListComponent,
+        ChannelPageComponent,ChannelPlayerComponent
     ]
 
 })
