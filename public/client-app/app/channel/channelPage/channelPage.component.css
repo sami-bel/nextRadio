@@ -3,9 +3,10 @@
     border: 1px solid #002A80;
     height: 71vh;
 }
-.highlights{
+.temps-fort{
     border: 2px solid #c3325f;
     height: 16vh;
+    overflow: auto;
 }
 .comment{
     border: 2px solid #b03911;

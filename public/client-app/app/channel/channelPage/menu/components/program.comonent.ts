@@ -1,6 +1,6 @@
 import {Component, OnInit, OnChanges} from '@angular/core';
-import { EmitterService } from '../../emitter.service';
-import {Channel} from "../../channel/model/channel";
+import {Channel} from "../../../model/channel";
+import {EmitterService} from "../../../../emitter.service";
 @Component({
     selector:'channels-menu',
     template:`<h2> programm </h2>

@@ -1,9 +1,8 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import {MenuComponent} from './menu/components/menu.component'
-import {ProgramComponent} from './menu/components/program.comonent'
-import {ChannelsComponent} from './menu/components/channels.component'
+import {MenuComponent} from './channel/channelPage/menu/components/menu.component'
+import {ProgramComponent} from './channel/channelPage/menu/components/program.comonent'
 
 import {PageNotFoundComponent} from './pageNoteFouned.component';
 import {ChannelsListComponent} from './channel/channelsList/components/channelsList.component'

@@ -13,11 +13,13 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var channel_routing_module_1 = require('./channel-routing.module');
-var channelPlayer_component_1 = require('./channelPage/components/channelPlayer.component');
+var channelPlayer_component_1 = require('./channelPage/channelPlayer.component');
 var channelsList_component_1 = require('./channelsList/components/channelsList.component');
-var channelPage_component_1 = require('./channelPage/components/channelPage.component');
+var channelPage_component_1 = require('./channelPage/channelPage.component');
 var channelsList_service_1 = require('./channelsList/service/channelsList.service');
 var comment_module_1 = require('./channelPage/comment/comment.module');
+var menu_module_1 = require('./channelPage/menu/menu.module');
+var tempsFort_modul_1 = require('./channelPage/tempsFort/tempsFort.modul');
 var ChannelModule = (function () {
     function ChannelModule() {
     }
@@ -28,8 +30,10 @@ var ChannelModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 http_1.JsonpModule,
+                menu_module_1.MenuModule,
                 comment_module_1.CommentModule,
-                channel_routing_module_1.ChannelRoutingModule
+                channel_routing_module_1.ChannelRoutingModule,
+                tempsFort_modul_1.TempsFortModule
             ],
             declarations: [
                 channelsList_component_1.ChannelsListComponent,

@@ -18,7 +18,8 @@ require('rxjs/add/operator/catch');
 var ChannelsListService = (function () {
     function ChannelsListService(http) {
         this.http = http;
-        this.channelsUrl = 'http://192.168.1.3:1337/api/channel/all';
+        // private channelsUrl = 'http://192.168.1.3:1337/api/channel/all';
+        this.channelsUrl = '/api/channel/all';
     }
     ChannelsListService.prototype.getChannelList = function () {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON

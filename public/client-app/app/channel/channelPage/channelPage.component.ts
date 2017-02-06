@@ -1,20 +1,18 @@
 import {Component, OnInit, OnChanges} from '@angular/core';
-import {ChannelsService} from "../../../menu/services/channels.service";
-import {Channel} from "../../model/channel";
-import {EmitterService} from "../../../emitter.service";
 import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
     template:`<div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-3 menu"> <ng-menu></ng-menu></div>
+                    <div class="col-md-6">
                         <div class="player "> <ng-player></ng-player> </div>
-                        <div class="highlights"> temps fort</div>
+                        <div class="temps-fort"> <ng-tempsFort></ng-tempsFort></div>
                     </div>
-                    <div class="col-md-4 comment"><ng-comment></ng-comment></div>
+                    <div class="col-md-3 comment"><ng-comment></ng-comment></div>
               </div>
              
         `,
-    styleUrls:['client-app/app/channel/channelPage/components/channelPage.component.css']
+    styleUrls:['client-app/app/channel/channelPage/channelPage.component.css']
 })
 
 export class ChannelPageComponent implements OnInit{

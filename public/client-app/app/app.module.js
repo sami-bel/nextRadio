@@ -13,7 +13,6 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var pageNoteFouned_component_1 = require('./pageNoteFouned.component');
-var menu_module_1 = require('./menu/menu.module');
 var channel_module_1 = require('./channel/channel.module');
 var app_component_1 = require('./app.component');
 var emitter_service_1 = require('./emitter.service');
@@ -28,7 +27,6 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 http_1.JsonpModule,
-                menu_module_1.MenuModule,
                 channel_module_1.ChannelModule,
                 api_routing_module_1.AppRoutingModule
             ],

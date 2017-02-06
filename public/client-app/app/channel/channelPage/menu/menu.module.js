@@ -12,7 +12,6 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
-var channels_component_1 = require('./components/channels.component');
 var menu_component_1 = require('./components/menu.component');
 var program_comonent_1 = require('./components/program.comonent');
 var channels_service_1 = require('./services/channels.service');
@@ -28,14 +27,12 @@ var MenuModule = (function () {
                 http_1.JsonpModule,
             ],
             declarations: [
-                channels_component_1.ChannelsComponent,
                 menu_component_1.MenuComponent, program_comonent_1.ProgramComponent
             ],
             providers: [
                 channels_service_1.ChannelsService
             ],
             exports: [
-                channels_component_1.ChannelsComponent,
                 menu_component_1.MenuComponent, program_comonent_1.ProgramComponent
             ]
         }), 

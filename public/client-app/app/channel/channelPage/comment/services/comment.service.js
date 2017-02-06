@@ -13,6 +13,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var Rx_1 = require('rxjs/Rx');
+var apiRoute = require('../../../../api-route');
 var io = require('socket.io-client');
 // Import RxJs required methods
 require('rxjs/add/operator/map');
@@ -20,8 +21,8 @@ require('rxjs/add/operator/catch');
 var CommentService = (function () {
     function CommentService(http) {
         this.http = http;
-        this.commentsUrl = 'http://192.168.1.3:1337/api/comment/';
-        this.socketUrl = 'http://192.168.1.3:1337';
+        this.commentsUrl = '/api/comment/';
+        this.socketUrl = apiRoute.route["baseUrl"];
     }
     CommentService.prototype.getComments = function () {
         // ...using get request

@@ -5,6 +5,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Comment }  from '../model/comment';
 import {Observable, Observer} from 'rxjs/Rx';
 import { Subject } from 'rxjs/Subject';
+import * as apiRoute from '../../../../api-route';
 
 import * as io from 'socket.io-client';
 
@@ -15,8 +16,8 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class CommentService {
 
-  private commentsUrl = 'http://192.168.1.3:1337/api/comment/';
-  private socketUrl = 'http://192.168.1.3:1337';
+  private commentsUrl = '/api/comment/';
+  private socketUrl = apiRoute.route["baseUrl"];
   private observable:Observable<Comment>
   private socket:SocketIOClient.Socket;
 

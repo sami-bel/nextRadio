@@ -4,7 +4,7 @@ import { FormsModule }    from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 
 import {PageNotFoundComponent} from './pageNoteFouned.component';
-import { MenuModule } from './menu/menu.module';
+import { MenuModule } from './channel/channelPage/menu/menu.module';
 import { ChannelModule } from './channel/channel.module';
 
 import { AppComponent }         from './app.component';
@@ -19,7 +19,7 @@ import {AppRoutingModule} from './api-routing.module'
     FormsModule,
     HttpModule,
     JsonpModule,
-    MenuModule,
+
     ChannelModule,
 
     AppRoutingModule

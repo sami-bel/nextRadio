@@ -4,8 +4,9 @@
             <a class="navbar-brand" href="#">Next Radio Tv</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+            <li class="active"><a href="#" routerLink="/channels">Home</a></li>
+            <li class="active" ><a href="#" routerLink="/admin">Admin</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" >Page 1 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="#">Page 1-1</a></li>
                     <li><a href="#">Page 1-2</a></li>
@@ -21,7 +22,6 @@
     </div>
 </nav>
 <div class="row page-content">
-    <div class="col-md-2 menu"> <ng-menu></ng-menu></div>
-    <div class="col-md-10 channelTv"><router-outlet></router-outlet></div>
+       <div class="col-md-12 channelTv"><router-outlet></router-outlet></div>
     <!--<comment-widget class="col-md-8 comment"></comment-widget>-->
 </div>
