@@ -9,19 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-// import { CommentComponent } from './comment/components/index'
-var AppComponent = (function () {
-    function AppComponent() {
+var http_1 = require('@angular/http');
+// Import RxJs required methods
+require('rxjs/add/operator/map');
+require('rxjs/add/operator/catch');
+var ChannelsService = (function () {
+    function ChannelsService(http) {
+        this.http = http;
+        this.commentsUrl = 'http://localhost:1337/api/comment/';
+        this.socketUrl = 'http://localhost:1337';
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            templateUrl: '/client-app/app/app.component.html',
-            styleUrls: ['client-app/app/app.component.css']
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ChannelsService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], ChannelsService);
+    return ChannelsService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ChannelsService = ChannelsService;
+//# sourceMappingURL=channels.service.js.map

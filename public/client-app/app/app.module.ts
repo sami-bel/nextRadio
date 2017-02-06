@@ -4,9 +4,15 @@ import { FormsModule }    from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 
 import { CommentModule } from './comment/comment.module';
+import {PageNotFoundComponent} from './pageNoteFouned.component';
+import { MenuModule } from './menu/menu.module';
+import { ChannelModule } from './channel/channel.module';
 
 import { AppComponent }         from './app.component';
 import { EmitterService }          from './emitter.service';
+
+import {AppRoutingModule} from './api-routing.module'
+
 
 @NgModule({
   imports: [
@@ -14,11 +20,17 @@ import { EmitterService }          from './emitter.service';
     FormsModule,
     HttpModule,
     JsonpModule,
-    CommentModule
+    CommentModule,
+    MenuModule,
+    ChannelModule,
+
+    AppRoutingModule
 
   ],
   declarations: [
     AppComponent,
+    PageNotFoundComponent
+
   ],
   providers: [
     EmitterService

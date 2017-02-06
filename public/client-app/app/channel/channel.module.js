@@ -12,40 +12,36 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
-var comment_module_1 = require('./comment/comment.module');
-var pageNoteFouned_component_1 = require('./pageNoteFouned.component');
-var menu_module_1 = require('./menu/menu.module');
-var channel_module_1 = require('./channel/channel.module');
-var app_component_1 = require('./app.component');
-var emitter_service_1 = require('./emitter.service');
-var api_routing_module_1 = require('./api-routing.module');
-var AppModule = (function () {
-    function AppModule() {
+var channel_routing_module_1 = require('./channel-routing.module');
+var channelsList_component_1 = require('./channelsList/components/channelsList.component');
+var channelPage_component_1 = require('./channelPage/channelPage.component');
+var channelsList_service_1 = require('./channelsList/service/channelsList.service');
+var ChannelModule = (function () {
+    function ChannelModule() {
     }
-    AppModule = __decorate([
+    ChannelModule = __decorate([
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 http_1.JsonpModule,
-                comment_module_1.CommentModule,
-                menu_module_1.MenuModule,
-                channel_module_1.ChannelModule,
-                api_routing_module_1.AppRoutingModule
+                channel_routing_module_1.ChannelRoutingModule
             ],
             declarations: [
-                app_component_1.AppComponent,
-                pageNoteFouned_component_1.PageNotFoundComponent
+                channelsList_component_1.ChannelsListComponent,
+                channelPage_component_1.ChannelPageComponent
             ],
             providers: [
-                emitter_service_1.EmitterService
+                channelsList_service_1.ChannelsListService
             ],
-            bootstrap: [app_component_1.AppComponent]
+            exports: [
+                channelsList_component_1.ChannelsListComponent
+            ]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], ChannelModule);
+    return ChannelModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.ChannelModule = ChannelModule;
+//# sourceMappingURL=channel.module.js.map

@@ -9,19 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-// import { CommentComponent } from './comment/components/index'
-var AppComponent = (function () {
-    function AppComponent() {
+var router_1 = require('@angular/router');
+var pageNoteFouned_component_1 = require('./pageNoteFouned.component');
+var appRoutes = [
+    { path: '',
+        redirectTo: '/channels', pathMatch: 'full'
+    },
+    { path: '**', component: pageNoteFouned_component_1.PageNotFoundComponent }
+];
+var AppRoutingModule = (function () {
+    function AppRoutingModule() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            templateUrl: '/client-app/app/app.component.html',
-            styleUrls: ['client-app/app/app.component.css']
+    AppRoutingModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                router_1.RouterModule.forRoot(appRoutes)
+            ],
+            exports: [
+                router_1.RouterModule
+            ],
+            providers: []
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], AppRoutingModule);
+    return AppRoutingModule;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.AppRoutingModule = AppRoutingModule;
+//# sourceMappingURL=api-routing.module.js.map

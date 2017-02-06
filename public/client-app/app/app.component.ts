@@ -3,11 +3,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template: `
-        <h1>Comments</h1>
-        
-        <comment-widget></comment-widget>
-        `,
+  templateUrl: '/client-app/app/app.component.html',
+  styleUrls: ['client-app/app/app.component.css']
 
 })
 export class AppComponent { }

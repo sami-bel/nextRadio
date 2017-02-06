@@ -8,6 +8,7 @@ import {CommentService} from '../services/comment.service';
 @Component({
     selector: 'commentaire-page',
     templateUrl: '/client-app/app/comment/components/commentaire.component.html'
+    // templateUrl: 'commentaire.component.html'
 
 })
 export class CommentaireComponent implements OnInit{

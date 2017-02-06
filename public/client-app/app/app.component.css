@@ -1,0 +1,12 @@
+
+.menu{
+    border: 1px solid green;
+    height: 70vh;
+}
+.channelTv{
+    border: 2px solid red;
+    height: 70vh;
+}
+.page-content{
+    margin: auto;
+}

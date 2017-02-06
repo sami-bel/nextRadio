@@ -12,40 +12,36 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
-var comment_module_1 = require('./comment/comment.module');
-var pageNoteFouned_component_1 = require('./pageNoteFouned.component');
-var menu_module_1 = require('./menu/menu.module');
-var channel_module_1 = require('./channel/channel.module');
-var app_component_1 = require('./app.component');
-var emitter_service_1 = require('./emitter.service');
-var api_routing_module_1 = require('./api-routing.module');
-var AppModule = (function () {
-    function AppModule() {
+var channels_component_1 = require('./components/channels.component');
+var menu_component_1 = require('./components/menu.component');
+var program_comonent_1 = require('./components/program.comonent');
+var channels_service_1 = require('./services/channels.service');
+var MenuModule = (function () {
+    function MenuModule() {
     }
-    AppModule = __decorate([
+    MenuModule = __decorate([
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 http_1.JsonpModule,
-                comment_module_1.CommentModule,
-                menu_module_1.MenuModule,
-                channel_module_1.ChannelModule,
-                api_routing_module_1.AppRoutingModule
             ],
             declarations: [
-                app_component_1.AppComponent,
-                pageNoteFouned_component_1.PageNotFoundComponent
+                channels_component_1.ChannelsComponent,
+                menu_component_1.MenuComponent, program_comonent_1.ProgramComponent
             ],
             providers: [
-                emitter_service_1.EmitterService
+                channels_service_1.ChannelsService
             ],
-            bootstrap: [app_component_1.AppComponent]
+            exports: [
+                channels_component_1.ChannelsComponent,
+                menu_component_1.MenuComponent, program_comonent_1.ProgramComponent
+            ]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], MenuModule);
+    return MenuModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.MenuModule = MenuModule;
+//# sourceMappingURL=menu.module.js.map

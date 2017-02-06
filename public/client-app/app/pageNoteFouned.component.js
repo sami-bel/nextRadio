@@ -9,19 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-// import { CommentComponent } from './comment/components/index'
-var AppComponent = (function () {
-    function AppComponent() {
+var PageNotFoundComponent = (function () {
+    function PageNotFoundComponent() {
     }
-    AppComponent = __decorate([
+    PageNotFoundComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: '/client-app/app/app.component.html',
-            styleUrls: ['client-app/app/app.component.css']
+            template: '<h2>Page not found</h2>'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], PageNotFoundComponent);
+    return PageNotFoundComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.PageNotFoundComponent = PageNotFoundComponent;
+//# sourceMappingURL=pageNoteFouned.component.js.map

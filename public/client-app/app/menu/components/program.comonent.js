@@ -9,19 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-// import { CommentComponent } from './comment/components/index'
-var AppComponent = (function () {
-    function AppComponent() {
+var emitter_service_1 = require('../../emitter.service');
+var ProgramComponent = (function () {
+    function ProgramComponent() {
     }
-    AppComponent = __decorate([
+    ProgramComponent.prototype.ngOnInit = function () {
+        emitter_service_1.EmitterService.get("GET_CHANNELS").subscribe(function (channel) {
+        });
+    };
+    ProgramComponent.prototype.ngOnChanges = function (changes) {
+        // EmitterService.get(this.channalsList).subscribe((channel:Comment[]) => { this.loadComments()});
+    };
+    ProgramComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: '/client-app/app/app.component.html',
-            styleUrls: ['client-app/app/app.component.css']
+            selector: 'channels-menu',
+            template: "<h2> programm </h2>\n               <h3> program 1 </h3>"
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], ProgramComponent);
+    return ProgramComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ProgramComponent = ProgramComponent;
+//# sourceMappingURL=program.comonent.js.map

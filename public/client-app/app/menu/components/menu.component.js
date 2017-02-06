@@ -8,20 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+/* * * ./app/comments/components/index.ts * * */
+// Imports
 var core_1 = require('@angular/core');
-// import { CommentComponent } from './comment/components/index'
-var AppComponent = (function () {
-    function AppComponent() {
+var MenuComponent = (function () {
+    function MenuComponent() {
+        // Event tracking properties
+        this.listId = 'COMMENT_COMPONENT_LIST';
+        this.editId = 'COMMENT_COMPONENT_EDIT';
     }
-    AppComponent = __decorate([
+    MenuComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: '/client-app/app/app.component.html',
-            styleUrls: ['client-app/app/app.component.css']
+            selector: 'ng-menu',
+            template: "\n        <div>\n            <h2> Menu channel</h2>\n                    \n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], MenuComponent);
+    return MenuComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.MenuComponent = MenuComponent;
+//# sourceMappingURL=menu.component.js.map

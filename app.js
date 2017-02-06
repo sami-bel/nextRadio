@@ -17,6 +17,7 @@ var LocalStrategy = require('passport-local').Strategy;
 
 var user        = require('./models/user');
 var Comment = require('./models/Comment');
+var channel = require('./models/channel');
 
 var index       = require('./routes/index');
 var channel_api = require('./routes/api/channel');
