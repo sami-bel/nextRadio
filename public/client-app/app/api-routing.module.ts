@@ -12,6 +12,9 @@ const appRoutes: Routes = [
     {   path: '',
         redirectTo:'/channels', pathMatch: 'full'
     },
+    {
+        path: 'admin', component: PageNotFoundComponent
+    },
     { path: '**', component: PageNotFoundComponent }
 ];
 

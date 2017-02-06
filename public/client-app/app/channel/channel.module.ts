@@ -7,7 +7,7 @@ import {ChannelPlayerComponent} from './channelPage/components/channelPlayer.com
 import { ChannelsListComponent } from './channelsList/components/channelsList.component';
 import {ChannelPageComponent} from './channelPage/components/channelPage.component'
 import { ChannelsListService } from './channelsList/service/channelsList.service';
-
+import {CommentModule} from './channelPage/comment/comment.module'
 
 @NgModule({
     imports: [
@@ -15,6 +15,7 @@ import { ChannelsListService } from './channelsList/service/channelsList.service
         FormsModule,
         HttpModule,
         JsonpModule,
+        CommentModule,
         ChannelRoutingModule
 
     ],

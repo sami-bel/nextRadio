@@ -20,7 +20,7 @@ var ChannelPageComponent = (function () {
     };
     ChannelPageComponent = __decorate([
         core_1.Component({
-            template: "<div class=\"row\">\n                    <div class=\"col-md-8\">\n                        <div class=\"player \"> <ng-player></ng-player> </div>\n                        <div class=\"highlights\"> temps fort</div>\n                    </div>\n                    <div class=\"col-md-4 comment\">comment</div>\n              </div>\n             \n        ",
+            template: "<div class=\"row\">\n                    <div class=\"col-md-8\">\n                        <div class=\"player \"> <ng-player></ng-player> </div>\n                        <div class=\"highlights\"> temps fort</div>\n                    </div>\n                    <div class=\"col-md-4 comment\"><ng-comment></ng-comment></div>\n              </div>\n             \n        ",
             styleUrls: ['client-app/app/channel/channelPage/components/channelPage.component.css']
         }), 
         __metadata('design:paramtypes', [router_1.ActivatedRoute])

@@ -11,7 +11,7 @@ import {Channel} from "../../model/channel";
 @Injectable()
 export class ChannelsListService {
 
-    private channelsUrl = 'http://localhost:1337/api/channel/all';
+    private channelsUrl = 'http://192.168.1.3:1337/api/channel/all';
 
     constructor (private http: Http) {
 

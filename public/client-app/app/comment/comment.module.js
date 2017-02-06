@@ -18,10 +18,10 @@ var comment_form_component_1 = require('./components/comment-form.component');
 var index_1 = require('./components/index');
 var commentaire_component_1 = require('./components/commentaire.component');
 var comment_service_1 = require('./services/comment.service');
-var CommentModule = (function () {
-    function CommentModule() {
+var Comment1Module = (function () {
+    function Comment1Module() {
     }
-    CommentModule = __decorate([
+    Comment1Module = __decorate([
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
@@ -48,8 +48,8 @@ var CommentModule = (function () {
             ]
         }), 
         __metadata('design:paramtypes', [])
-    ], CommentModule);
-    return CommentModule;
+    ], Comment1Module);
+    return Comment1Module;
 }());
-exports.CommentModule = CommentModule;
+exports.Comment1Module = Comment1Module;
 //# sourceMappingURL=comment.module.js.map

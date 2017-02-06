@@ -43,6 +43,6 @@ import { CommentService } from './services/comment.service';
   ]
 
 })
-export class CommentModule {
+export class Comment1Module {
 }
 

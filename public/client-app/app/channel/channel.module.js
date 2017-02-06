@@ -17,6 +17,7 @@ var channelPlayer_component_1 = require('./channelPage/components/channelPlayer.
 var channelsList_component_1 = require('./channelsList/components/channelsList.component');
 var channelPage_component_1 = require('./channelPage/components/channelPage.component');
 var channelsList_service_1 = require('./channelsList/service/channelsList.service');
+var comment_module_1 = require('./channelPage/comment/comment.module');
 var ChannelModule = (function () {
     function ChannelModule() {
     }
@@ -27,6 +28,7 @@ var ChannelModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 http_1.JsonpModule,
+                comment_module_1.CommentModule,
                 channel_routing_module_1.ChannelRoutingModule
             ],
             declarations: [

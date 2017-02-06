@@ -15,6 +15,9 @@ var appRoutes = [
     { path: '',
         redirectTo: '/channels', pathMatch: 'full'
     },
+    {
+        path: 'admin', component: pageNoteFouned_component_1.PageNotFoundComponent
+    },
     { path: '**', component: pageNoteFouned_component_1.PageNotFoundComponent }
 ];
 var AppRoutingModule = (function () {

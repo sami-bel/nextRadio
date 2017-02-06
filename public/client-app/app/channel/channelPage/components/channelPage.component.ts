@@ -10,7 +10,7 @@ import {ActivatedRoute, Params} from "@angular/router";
                         <div class="player "> <ng-player></ng-player> </div>
                         <div class="highlights"> temps fort</div>
                     </div>
-                    <div class="col-md-4 comment">comment</div>
+                    <div class="col-md-4 comment"><ng-comment></ng-comment></div>
               </div>
              
         `,

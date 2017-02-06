@@ -10,4 +10,5 @@
 .comment{
     border: 2px solid #b03911;
     height: 88vh;
+    overflow: auto;
 }
