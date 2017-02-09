@@ -17,6 +17,7 @@ var channel_module_1 = require('./channel/channel.module');
 var app_component_1 = require('./app.component');
 var emitter_service_1 = require('./emitter.service');
 var api_routing_module_1 = require('./api-routing.module');
+var admin_module_1 = require('./admin/admin.module');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,6 +28,7 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 http_1.JsonpModule,
+                admin_module_1.AdminModule,
                 channel_module_1.ChannelModule,
                 api_routing_module_1.AppRoutingModule
             ],

@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /* * * ./app/comments/components/comment-box.component.ts * * */
 // Imports
 var core_1 = require('@angular/core');
-var comment_1 = require('../model/comment');
+var comment_1 = require('../../models/comment');
 var emitter_service_1 = require('../../emitter.service');
 var comment_service_1 = require('../services/comment.service');
 // Component decorator

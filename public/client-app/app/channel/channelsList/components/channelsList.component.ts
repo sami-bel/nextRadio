@@ -1,7 +1,7 @@
 import {Component, OnInit, OnChanges} from '@angular/core';
 import {ChannelsService} from "../../channelPage/menu/services/channels.service";
-import {ChannelsListService} from "../service/channelsList.service";
-import {Channel} from "../../model/channel";
+import {ChannelsListService} from '../../../shard/service/channelsList.service'
+import {Channel} from "../../../models/channel";
 import {EmitterService} from "../../../emitter.service";
 import {ActivatedRoute, Router} from "@angular/router";
 

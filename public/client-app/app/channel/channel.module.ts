@@ -6,7 +6,7 @@ import {ChannelRoutingModule} from './channel-routing.module';
 import {ChannelPlayerComponent} from './channelPage/channelPlayer.component';
 import { ChannelsListComponent } from './channelsList/components/channelsList.component';
 import {ChannelPageComponent} from './channelPage/channelPage.component'
-import { ChannelsListService } from './channelsList/service/channelsList.service';
+import { ChannelsListService } from '../shard/service/channelsList.service';
 import {CommentModule} from './channelPage/comment/comment.module'
 import{ MenuModule} from './channelPage/menu/menu.module'
 import {TempsFortModule} from './channelPage/tempsFort/tempsFort.modul'

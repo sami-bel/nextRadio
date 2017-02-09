@@ -11,6 +11,7 @@ import { AppComponent }         from './app.component';
 import { EmitterService }          from './emitter.service';
 
 import {AppRoutingModule} from './api-routing.module'
+import {AdminModule} from './admin/admin.module'
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import {AppRoutingModule} from './api-routing.module'
     FormsModule,
     HttpModule,
     JsonpModule,
-
+    AdminModule,
     ChannelModule,
 
     AppRoutingModule

@@ -3,7 +3,7 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { Comment } from '../model/comment';
+import { Comment } from '../../models/comment';
 import {CommentService} from '../services/comment.service';
 import { EmitterService } from '../../emitter.service';
 

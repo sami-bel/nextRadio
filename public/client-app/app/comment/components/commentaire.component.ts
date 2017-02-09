@@ -1,7 +1,7 @@
 
 import {Component, OnInit} from '@angular/core';
 
-import { Comment } from '../model/comment';
+import { Comment } from '../../models/comment';
 import {CommentService} from '../services/comment.service';
 
 // Component decorator
@@ -14,7 +14,7 @@ import {CommentService} from '../services/comment.service';
 export class CommentaireComponent implements OnInit{
 
 
-    private model = new Comment('', '', new Date);
+    private model = new Comment('', '');
     private comments: Comment[] = [];
     private comment :Comment;
 
@@ -33,7 +33,7 @@ export class CommentaireComponent implements OnInit{
     sendMessage(){
         this.commentService.addComment(this.model).subscribe(
             comment =>{
-                this.comment = new Comment('','',new Date);
+                this.comment = new Comment('','');
                 console.log(comment)
                 console.log(this.comments)
 

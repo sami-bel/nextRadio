@@ -2,12 +2,11 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import {Observable, Observer} from 'rxjs/Rx';
-import * as apiRoute from '../../../api-route';
 
 // Import RxJs required methods
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import {Channel} from "../../model/channel";
+import {Channel} from "../../models/channel";
 
 @Injectable()
 export class ChannelsListService {

@@ -11,14 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var comment_service_1 = require('../services/comment.service');
 var emitter_service_1 = require('../../emitter.service');
-var comment_1 = require('../model/comment');
+var comment_1 = require('../../models/comment');
 // Component decorator
 var CommentFormComponent = (function () {
     // Constructor with injected service
     function CommentFormComponent(commentService) {
         this.commentService = commentService;
         // Local properties
-        this.model = new comment_1.Comment('', '', new Date);
+        this.model = new comment_1.Comment('', '');
         this.editing = false;
     }
     CommentFormComponent.prototype.submitComment = function () {
@@ -34,7 +34,7 @@ var CommentFormComponent = (function () {
             // Emit list event
             emitter_service_1.EmitterService.get(_this.listId).emit(comments);
             // Empty model
-            _this.model = new comment_1.Comment('', '', new Date());
+            _this.model = new comment_1.Comment('', '');
             // Switch editing status
             if (_this.editing)
                 _this.editing = !_this.editing;

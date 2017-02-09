@@ -1,0 +1,20 @@
+<div> channels List </div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Url</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let channel of channels">
+            <td>{{channel.name}}</td>
+            <td>{{channel.url}}</td>
+            <td>john@example.com</td>
+            <td>ubdate</td>
+        </tr>
+    </tbody>
+</table>

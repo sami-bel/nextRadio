@@ -9,13 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var comment_1 = require('../model/comment');
+var comment_1 = require('../../models/comment');
 var comment_service_1 = require('../services/comment.service');
 // Component decorator
 var CommentaireComponent = (function () {
     function CommentaireComponent(commentService) {
         this.commentService = commentService;
-        this.model = new comment_1.Comment('', '', new Date);
+        this.model = new comment_1.Comment('', '');
         this.comments = [];
     }
     CommentaireComponent.prototype.ngOnInit = function () {
@@ -29,7 +29,7 @@ var CommentaireComponent = (function () {
     CommentaireComponent.prototype.sendMessage = function () {
         var _this = this;
         this.commentService.addComment(this.model).subscribe(function (comment) {
-            _this.comment = new comment_1.Comment('', '', new Date);
+            _this.comment = new comment_1.Comment('', '');
             console.log(comment);
             console.log(_this.comments);
         }, function (err) {

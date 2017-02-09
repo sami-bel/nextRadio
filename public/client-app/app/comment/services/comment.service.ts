@@ -2,7 +2,7 @@
 // Imports
 import { Injectable }     from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { Comment }  from '../model/comment';
+import { Comment }  from '../../models/comment';
 import {Observable, Observer} from 'rxjs/Rx';
 import { Subject } from 'rxjs/Subject';
 
