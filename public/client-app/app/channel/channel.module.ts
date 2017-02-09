@@ -10,6 +10,7 @@ import { ChannelsListService } from './channelsList/service/channelsList.service
 import {CommentModule} from './channelPage/comment/comment.module'
 import{ MenuModule} from './channelPage/menu/menu.module'
 import {TempsFortModule} from './channelPage/tempsFort/tempsFort.modul'
+import {ChannelPageService} from "./channelPage/channelPage.service";
 
 @NgModule({
     imports: [
@@ -30,7 +31,7 @@ import {TempsFortModule} from './channelPage/tempsFort/tempsFort.modul'
     ],
 
     providers: [
-        ChannelsListService
+        ChannelsListService,ChannelPageService
     ],
 
     exports:[

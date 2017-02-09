@@ -32,11 +32,12 @@ var CommentService = (function () {
             .map(function (res) { return res.json(); })
             .catch(function (error) { return Rx_1.Observable.throw(error.json().error || 'Server error'); });
     };
-    CommentService.prototype.getCommentAdded = function () {
+    CommentService.prototype.getCommentAdded = function (name) {
         var _this = this;
         return new Rx_1.Observable(function (observer) {
             _this.socket = io(_this.socketUrl);
             _this.socket.connect();
+            _this.socket.emit('join-channel', { name: name });
             _this.socket.on('comment', function (data) { observer.next(data); });
             return function () { _this.socket.disconnect(); };
         });

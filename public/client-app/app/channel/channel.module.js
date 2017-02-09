@@ -20,6 +20,7 @@ var channelsList_service_1 = require('./channelsList/service/channelsList.servic
 var comment_module_1 = require('./channelPage/comment/comment.module');
 var menu_module_1 = require('./channelPage/menu/menu.module');
 var tempsFort_modul_1 = require('./channelPage/tempsFort/tempsFort.modul');
+var channelPage_service_1 = require("./channelPage/channelPage.service");
 var ChannelModule = (function () {
     function ChannelModule() {
     }
@@ -40,7 +41,7 @@ var ChannelModule = (function () {
                 channelPage_component_1.ChannelPageComponent, channelPlayer_component_1.ChannelPlayerComponent
             ],
             providers: [
-                channelsList_service_1.ChannelsListService
+                channelsList_service_1.ChannelsListService, channelPage_service_1.ChannelPageService
             ],
             exports: [
                 channelsList_component_1.ChannelsListComponent,

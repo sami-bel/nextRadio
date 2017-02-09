@@ -35,11 +35,12 @@ export class CommentService {
       .catch((error:any)  => Observable.throw(error.json().error || 'Server error'));
   }
 
-  getCommentAdded() : Observable<Comment>{
+  getCommentAdded(name:string) : Observable<Comment>{
       return new Observable((observer:Observer<Comment>) =>
       {
           this.socket = io(this.socketUrl);
           this.socket.connect();
+          this.socket.emit('join-channel', { name : name})
           this.socket.on('comment', (data:Comment) => { observer.next(data); });
           return () => { this.socket.disconnect(); };
       });

@@ -6,9 +6,10 @@ router.post('/create', function(req, res, next){
     console.log('ici -create');
 
     var item = req.body;
-
     item.author = req.user.username;
+    var channelName = item.channel;
 
+    console.log(channelName);
 
     mongoose.model('Comment').create(item, function(err, item){
         if(err){
@@ -16,7 +17,8 @@ router.post('/create', function(req, res, next){
             return;
         }else{
             var io = req.app.get('socketio');
-            io.emit('comment', item);
+            io.to(channelName).emit('comment', item);
+
             res.json(item);
         }
     });

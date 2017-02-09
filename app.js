@@ -120,7 +120,7 @@ socket.on('connection', function(client) {
   });
   
   client.on('join-channel', function(event){
-    console.log(client);
+      console.log('------------------------------------------------------ join -------------');
       client.join(event.name);
   });
 
