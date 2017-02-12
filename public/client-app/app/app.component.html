@@ -4,24 +4,14 @@
             <a class="navbar-brand" href="#">Next Radio Tv</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#" routerLink="/channels">Home</a></li>
-            <li class="active" ><a href="#" routerLink="/admin">Admin</a></li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" >Page 1 <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Page 1-1</a></li>
-                    <li><a href="#">Page 1-2</a></li>
-                    <li><a href="#">Page 1-3</a></li>
-                </ul>
-            </li>
-            <li><a>Page 2</a></li>
+            <li><a href="#" routerLink="/channels">Home</a></li>
+            <li><a href="#" routerLink="/admin">Channel</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="/logout"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         </ul>
     </div>
 </nav>
 <div class="row page-content">
        <div class="col-md-12 channelTv"><router-outlet></router-outlet></div>
-    <!--<comment-widget class="col-md-8 comment"></comment-widget>-->
 </div>

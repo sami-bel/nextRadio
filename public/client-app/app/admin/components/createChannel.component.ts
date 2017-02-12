@@ -1,27 +1,26 @@
 import{Component, OnInit} from '@angular/core'
 import {AdminChannelService} from "../adminChannel.service";
 import {Channel} from "../../models/channel";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'ng-createChannel',
     templateUrl:'/client-app/app/admin/components/createChannel.component.html'
 })
-export class CreateChannelComponent implements OnInit{
+export class CreateChannelComponent {
 
-    private channels : Array<Channel>
-    constructor(private adminChannel: AdminChannelService){
+    private channels = new Array<Channel>();
+    private channel = new Channel();
 
-    }
-    ngOnInit(){
+    constructor(private adminChannel: AdminChannelService, private router :Router){}
 
-    }
 
-    createChannel(channel : Channel){
-        this.adminChannel.addChannel(channel).subscribe(
+    createChannel(){
+        this.adminChannel.createChannel(this.channel).subscribe(
             channel => {
-            console.log(channel);
             this.channels.push(channel);
 
-        })
+        });
+        this.router.navigate(['/admin']);
     }
 }

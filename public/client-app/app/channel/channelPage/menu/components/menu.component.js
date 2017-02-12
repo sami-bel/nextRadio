@@ -13,14 +13,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var MenuComponent = (function () {
     function MenuComponent() {
-        // Event tracking properties
-        this.listId = 'COMMENT_COMPONENT_LIST';
-        this.editId = 'COMMENT_COMPONENT_EDIT';
     }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], MenuComponent.prototype, "channelID", void 0);
     MenuComponent = __decorate([
         core_1.Component({
             selector: 'ng-menu',
-            template: "\n        <div>\n            <h2> Menu channel</h2>\n                    \n        </div>\n    "
+            template: "\n        <div>\n            <h2> Channel Program</h2>         \n        </div>\n        <channels-program [channelID]=\"channelID\"></channels-program>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], MenuComponent);

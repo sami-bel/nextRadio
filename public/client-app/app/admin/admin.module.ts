@@ -7,6 +7,7 @@ import { ChannelsListComponent} from './components/channelsList.component';
 import {AdminRoutingModule} from './admin-routing.module';
 import {AdminComponent} from './admin.component'
 import {AdminChannelService} from './adminChannel.service'
+import {ChannelEditModule} from './channelEdit/channelEdit.module'
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {AdminChannelService} from './adminChannel.service'
         FormsModule,
         HttpModule,
         JsonpModule,
-        AdminRoutingModule
+        ChannelEditModule,
+        AdminRoutingModule,
 
 
 

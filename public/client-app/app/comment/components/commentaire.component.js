@@ -15,7 +15,7 @@ var comment_service_1 = require('../services/comment.service');
 var CommentaireComponent = (function () {
     function CommentaireComponent(commentService) {
         this.commentService = commentService;
-        this.model = new comment_1.Comment('', '');
+        this.model = new comment_1.Comment();
         this.comments = [];
     }
     CommentaireComponent.prototype.ngOnInit = function () {
@@ -29,7 +29,7 @@ var CommentaireComponent = (function () {
     CommentaireComponent.prototype.sendMessage = function () {
         var _this = this;
         this.commentService.addComment(this.model).subscribe(function (comment) {
-            _this.comment = new comment_1.Comment('', '');
+            _this.comment = new comment_1.Comment();
             console.log(comment);
             console.log(_this.comments);
         }, function (err) {

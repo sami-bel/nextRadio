@@ -1,18 +1,22 @@
 /* * * ./app/comments/components/index.ts * * */
 // Imports
-import { Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'ng-menu',
   template: `
         <div>
-            <h2> Menu channel</h2>
-                    
+            <h2> Channel Program</h2>         
         </div>
+        <channels-program [channelID]="channelID"></channels-program>
     `
 })
-export class MenuComponent {
-  // Event tracking properties
-  private listId = 'COMMENT_COMPONENT_LIST';
-  private editId = 'COMMENT_COMPONENT_EDIT';
+export class MenuComponent{
+    @Input() channelID :string;
+    constructor(){
+
+    }
+
+
+
 }

@@ -1,8 +1,6 @@
 "use strict";
 var Comment = (function () {
-    function Comment(author, text) {
-        this.author = author;
-        this.text = text;
+    function Comment() {
     }
     return Comment;
 }());

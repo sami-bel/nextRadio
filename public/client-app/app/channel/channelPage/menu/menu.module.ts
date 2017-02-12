@@ -4,7 +4,7 @@ import { FormsModule }    from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 
 import { MenuComponent } from './components/menu.component';
-import { ProgramComponent } from './components/program.comonent';
+import { ProgramComponent } from './components/program.component';
 
 
 

@@ -31,7 +31,7 @@ import {ChannelPageService} from "./channelPage/channelPage.service";
     ],
 
     providers: [
-        ChannelsListService,ChannelPageService
+        ChannelsListService,ChannelPageService,
     ],
 
     exports:[

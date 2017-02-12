@@ -10,15 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-// Import RxJs required methods
+var Rx_1 = require('rxjs/Rx');
 require('rxjs/add/operator/map');
 require('rxjs/add/operator/catch');
 var ChannelsService = (function () {
     function ChannelsService(http) {
         this.http = http;
-        this.commentsUrl = 'http://localhost:1337/api/comment/';
-        this.socketUrl = 'http://localhost:1337';
+        this.programUrl = 'http://localhost:1337/api/program/';
     }
+    ChannelsService.prototype.getPrograms = function (id) {
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this.http.get(this.programUrl + "/all/" + id, options)
+            .map(function (res) { return res.json(); })
+            .catch(function (error) { return Rx_1.Observable.throw(error.json().error || 'Server error on get programs'); });
+    };
     ChannelsService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])

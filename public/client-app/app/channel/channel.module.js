@@ -41,7 +41,7 @@ var ChannelModule = (function () {
                 channelPage_component_1.ChannelPageComponent, channelPlayer_component_1.ChannelPlayerComponent
             ],
             providers: [
-                channelsList_service_1.ChannelsListService, channelPage_service_1.ChannelPageService
+                channelsList_service_1.ChannelsListService, channelPage_service_1.ChannelPageService,
             ],
             exports: [
                 channelsList_component_1.ChannelsListComponent,

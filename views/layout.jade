@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Angular QuickStart
+    title Next Radio TV
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
@@ -10,6 +10,7 @@ html
     link(href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', rel='stylesheet')
     link(href='http://fonts.googleapis.com/css?family=Roboto:400,700,300', rel='stylesheet', type='text/css')
     link(href='stylesheets/pe-icon-7-stroke.css', rel='stylesheet')
+    link(href='stylesheets/loader.css', rel='stylesheet')
     link(href='stylesheets/style.css', rel='stylesheet')
     //link(rel='stylesheet', href='styles.css')
     // Polyfill(s) for older browsers
@@ -23,3 +24,11 @@ html
         System.import('app').catch(function(err){ console.error(err); });
   body
     my-app Loading AppComponent content here ...
+      .table-loader
+        .table-cell-loader
+          .loader
+            span
+            span
+            span
+            span
+

@@ -19,14 +19,13 @@ var ChannelPageComponent = (function () {
     ChannelPageComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.subscribe(function (params) {
-            _this.name = params['name'];
-            console.log('this channel ', _this.name);
+            _this.channelID = params['id'];
             // this.channelPageService.joinChannel(this.name);
         });
     };
     ChannelPageComponent = __decorate([
         core_1.Component({
-            template: "<div class=\"row\">\n                    <div class=\"col-md-3 menu\"> <ng-menu></ng-menu></div>\n                    <div class=\"col-md-6\">\n                        <div class=\"player \"> <ng-player></ng-player> </div>\n                        <div class=\"temps-fort\"> <ng-tempsFort></ng-tempsFort></div>\n                    </div>\n                    <div class=\"col-md-3 comment\"><ng-comment [channelName]=\"name\"></ng-comment></div>\n              </div>\n             \n        ",
+            template: "<div class=\"row\">\n                    <div class=\"col-md-3 menu card\"> <ng-menu [channelID]=\"channelID\"></ng-menu></div>\n                    <div class=\"col-md-6\">\n                        <div class=\"player \"> <ng-player [channelID]=\"channelID\"></ng-player> </div>\n                        <div class=\"temps-fort\"> <ng-tempsFort [channelID]=\"channelID\"></ng-tempsFort></div>\n                    </div>\n                    <div class=\"col-md-3 comment\"><ng-comment [channelID]=\"channelID\"></ng-comment></div>\n              </div>\n             \n        ",
             styleUrls: ['client-app/app/channel/channelPage/channelPage.component.css']
         }), 
         __metadata('design:paramtypes', [router_1.ActivatedRoute, channelPage_service_1.ChannelPageService])

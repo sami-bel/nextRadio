@@ -24,29 +24,28 @@ var CommentService = (function () {
         this.commentsUrl = '/api/comment/';
         this.socketUrl = apiRoute.route["baseUrl"];
     }
-    CommentService.prototype.getComments = function () {
-        // ...using get request
+    CommentService.prototype.getComments = function (id) {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.get(this.commentsUrl, options)
+        return this.http.get(this.commentsUrl + "all/" + id, options)
             .map(function (res) { return res.json(); })
             .catch(function (error) { return Rx_1.Observable.throw(error.json().error || 'Server error'); });
     };
-    CommentService.prototype.getCommentAdded = function (name) {
+    CommentService.prototype.getCommentAdded = function (channelID) {
         var _this = this;
         return new Rx_1.Observable(function (observer) {
             _this.socket = io(_this.socketUrl);
             _this.socket.connect();
-            _this.socket.emit('join-channel', { name: name });
+            _this.socket.emit('join-channel', { name: channelID });
             _this.socket.on('comment', function (data) { observer.next(data); });
             return function () { _this.socket.disconnect(); };
         });
     };
-    CommentService.prototype.addComment = function (body) {
+    CommentService.prototype.addComment = function (body, id) {
         var bodyString = JSON.stringify(body); // Stringify payload
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         var options = new http_1.RequestOptions({ headers: headers }); // Create a request option
-        return this.http.post(this.commentsUrl + "create", body, options)
+        return this.http.post(this.commentsUrl + "create/" + id, body, options)
             .map(function (res) { return res.json(); })
             .catch(function (error) { return Rx_1.Observable.throw(error.json().error || 'Server error no create'); });
     };

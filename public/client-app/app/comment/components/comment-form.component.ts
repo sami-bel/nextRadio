@@ -28,7 +28,7 @@ export class CommentFormComponent implements OnChanges {
   // Constructor with injected service
   constructor(private commentService: CommentService){}
   // Local properties
-  private model = new Comment('','');
+  private model = new Comment();
   private editing = false;
 
   // Input properties
@@ -53,7 +53,7 @@ export class CommentFormComponent implements OnChanges {
         // Emit list event
         EmitterService.get(this.listId).emit(comments);
         // Empty model
-        this.model = new Comment('', '');
+        this.model = new Comment();
         // Switch editing status
         if(this.editing) this.editing = !this.editing;
       },

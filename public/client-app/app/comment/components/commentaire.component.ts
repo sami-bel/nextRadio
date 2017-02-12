@@ -14,7 +14,7 @@ import {CommentService} from '../services/comment.service';
 export class CommentaireComponent implements OnInit{
 
 
-    private model = new Comment('', '');
+    private model = new Comment();
     private comments: Comment[] = [];
     private comment :Comment;
 
@@ -33,7 +33,7 @@ export class CommentaireComponent implements OnInit{
     sendMessage(){
         this.commentService.addComment(this.model).subscribe(
             comment =>{
-                this.comment = new Comment('','');
+                this.comment = new Comment();
                 console.log(comment)
                 console.log(this.comments)
 

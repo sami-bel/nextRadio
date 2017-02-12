@@ -1,4 +1,4 @@
-<div> channels List </div>
+<div> <span> <h3> Channel List </h3> </span></div>
 
 <table class="table table-hover">
     <thead>
@@ -6,15 +6,15 @@
             <th>Name</th>
             <th>Url</th>
             <th>Update</th>
-            <th>Delete</th>
+
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let channel of channels">
             <td>{{channel.name}}</td>
             <td>{{channel.url}}</td>
-            <td>john@example.com</td>
-            <td>ubdate</td>
+            <td><span (click)="onSelect(channel)" class="glyphicon glyphicon-pencil"></span></td>
+
         </tr>
     </tbody>
 </table>

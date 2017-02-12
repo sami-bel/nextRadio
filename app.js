@@ -15,14 +15,18 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 
-var user        = require('./models/user');
+var user    = require('./models/user');
 var Comment = require('./models/Comment');
 var channel = require('./models/channel');
+var program = require('./models/program')
+var tempsFort = require('./models/tempsFort')
 
 var index       = require('./routes/index');
 var channel_api = require('./routes/api/channel');
 var message_api = require('./routes/api/message');
 var comment_api = require('./routes/api/comment');
+var program_api = require('./routes/api/program');
+var tempsFort_api = require('./routes/api/tempsFort');
 var auth = require('./routes/auth');
 
 
@@ -79,7 +83,11 @@ app.use('/', index);
 app.use('/api/channel', channel_api);
 app.use('/api/message', message_api);
 app.use('/api/comment', comment_api);
+app.use('/api/program/', program_api);
+app.use('/api/tempsFort/', tempsFort_api);
 app.use('/auth', auth);
+app.use('*', index);
+
 
 mongoose.connect('mongodb://localhost:27017/nextRadio');
 
@@ -120,7 +128,7 @@ socket.on('connection', function(client) {
   });
   
   client.on('join-channel', function(event){
-      console.log('------------------------------------------------------ join -------------');
+      console.log('---------- join -------------', event.name);
       client.join(event.name);
   });
 

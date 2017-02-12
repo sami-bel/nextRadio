@@ -4,12 +4,12 @@ import {ChannelPageService} from "./channelPage.service";
 
 @Component({
     template:`<div class="row">
-                    <div class="col-md-3 menu"> <ng-menu></ng-menu></div>
+                    <div class="col-md-3 menu card"> <ng-menu [channelID]="channelID"></ng-menu></div>
                     <div class="col-md-6">
-                        <div class="player "> <ng-player></ng-player> </div>
-                        <div class="temps-fort"> <ng-tempsFort></ng-tempsFort></div>
+                        <div class="player "> <ng-player [channelID]="channelID"></ng-player> </div>
+                        <div class="temps-fort"> <ng-tempsFort [channelID]="channelID"></ng-tempsFort></div>
                     </div>
-                    <div class="col-md-3 comment"><ng-comment [channelName]="name"></ng-comment></div>
+                    <div class="col-md-3 comment"><ng-comment [channelID]="channelID"></ng-comment></div>
               </div>
              
         `,
@@ -18,15 +18,14 @@ import {ChannelPageService} from "./channelPage.service";
 
 export class ChannelPageComponent implements OnInit{
 
-    private name : string;
+    private channelID : string;
 
     constructor(private route: ActivatedRoute, private channelPageService: ChannelPageService) {
 
     }
     ngOnInit(){
         this.route.params.subscribe(params => {
-            this.name = params['name'];
-            console.log('this channel ', this.name)
+            this.channelID = params['id'];
             // this.channelPageService.joinChannel(this.name);
         });
     }

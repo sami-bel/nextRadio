@@ -1,13 +1,15 @@
-import {Component, OnInit, OnChanges} from '@angular/core';
+import {Component, OnInit, OnChanges, Input, Sanitizer} from '@angular/core';
 import {ChannelsService} from "./menu/services/channels.service";
 import {Channel} from "../../models/channel";
 import {EmitterService} from "../../emitter.service";
 import {ActivatedRoute, Params} from "@angular/router";
+import {ChannelPageService} from "./channelPage.service";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
     selector:'ng-player',
     template:`<div class="player-container">
-                 <iframe class="player-video" frameborder="0" width="480" height="270" src="//www.dailymotion.com/embed/video/xgz4t1" allowfullscreen></iframe><br />
+                 <iframe class="player-video" frameborder="0" width="480" height="270"[src]="url" allowfullscreen></iframe><br />
               </div>     
         `,
     styles:[`.player-video {width:100%; height: 100%} .player-container{ height: 100%}`]
@@ -15,14 +17,24 @@ import {ActivatedRoute, Params} from "@angular/router";
 
 export class ChannelPlayerComponent implements OnInit{
 
-    private name : string;
+    @Input() private channelID : string;
 
-    constructor(private route: ActivatedRoute) {
+    private url: any;
+
+    constructor(private channelPage : ChannelPageService, private sanitizer : DomSanitizer) {
 
     }
-    ngOnInit(){
-        this.route.params.subscribe(params => { this.name = params['name']});
 
+    ngOnInit(){
+
+        this.channelPage.getChannel(this.channelID).subscribe(
+            channel => {
+                console.log('sami');
+                this.url = this.sanitizer.bypassSecurityTrustResourceUrl(channel.url);
+                console.log(this.url);
+            },
+            err => {console.log(err);}
+        );
     }
 
 }

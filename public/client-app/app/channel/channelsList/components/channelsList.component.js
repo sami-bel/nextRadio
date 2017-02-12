@@ -24,15 +24,15 @@ var ChannelsListComponent = (function () {
             emitter_service_1.EmitterService.get(_this.listChannelEvent).emit(_this.channels);
         });
     };
-    ChannelsListComponent.prototype.onSelect = function (name) {
-        this.router.navigate(['/channel', name]);
+    ChannelsListComponent.prototype.onSelect = function (id) {
+        this.router.navigate(['/channel', id]);
     };
     ChannelsListComponent.prototype.ngOnChanges = function () {
         emitter_service_1.EmitterService.get(this.listChannelEvent).emit(this.channels);
     };
     ChannelsListComponent = __decorate([
         core_1.Component({
-            template: "<h1> List Channels</h1>\n              <div *ngFor=\"let channel of channels\"><a (click)=\"onSelect(channel.name)\">{{channel.name}}</a></div>  \n        "
+            template: "<div class=\"container-fluid\">\n               \n              \n              <div  *ngFor=\"let channel of channels\" class=\"card col-md-2\" style=\"width: 20rem;\">\n                <img class=\"card-img-top\" style=\"width:100%;\"src=\"/images/tv/tv.png\" alt=\"Card image cap\">\n                <div class=\"card-block\">\n                    <h4 class=\"card-title\">{{channel.name}}</h4>\n                    <p class=\"card-text\"> Description </p>\n                    <a (click)=\"onSelect(channel._id)\" class=\"btn btn-primary\"> Watch </a>\n                </div>\n              </div>\n              </div>\n\n \n        "
         }), 
         __metadata('design:paramtypes', [channelsList_service_1.ChannelsListService, router_1.Router])
     ], ChannelsListComponent);

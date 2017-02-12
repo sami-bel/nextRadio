@@ -18,7 +18,7 @@ import {TempsFortComponent} from  './components/tempsFort.component'
     ],
 
     providers: [
-        TempsFortComponent
+        TempsFortService
     ],
 
     exports:[

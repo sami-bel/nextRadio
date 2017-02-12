@@ -9,25 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var emitter_service_1 = require("../../../../emitter.service");
+var channels_service_1 = require("../services/channels.service");
 var ProgramComponent = (function () {
-    function ProgramComponent() {
+    function ProgramComponent(channelsService) {
+        this.channelsService = channelsService;
+        this.programs = [];
     }
     ProgramComponent.prototype.ngOnInit = function () {
-        emitter_service_1.EmitterService.get("GET_CHANNELS").subscribe(function (channel) {
+        var _this = this;
+        this.channelsService.getPrograms(this.channelID).subscribe(function (programs) {
+            _this.programs = programs;
+            console.log(programs);
         });
     };
-    ProgramComponent.prototype.ngOnChanges = function (changes) {
-        // EmitterService.get(this.channalsList).subscribe((channel:Comment[]) => { this.loadComments()});
-    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], ProgramComponent.prototype, "channelID", void 0);
     ProgramComponent = __decorate([
         core_1.Component({
-            selector: 'channels-menu',
-            template: "<h2> programm </h2>\n               <h3> program 1 </h3>"
+            selector: 'channels-program',
+            templateUrl: "/client-app/app/channel/channelPage/menu/components/program.component.html"
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [channels_service_1.ChannelsService])
     ], ProgramComponent);
     return ProgramComponent;
 }());
 exports.ProgramComponent = ProgramComponent;
-//# sourceMappingURL=program.comonent.js.map
+//# sourceMappingURL=program.component.js.map

@@ -1,7 +1,7 @@
 
 import {Component, OnInit, Input} from '@angular/core';
 
-import { Comment } from '../model/comment';
+import { Comment } from '../../../../models/comment'
 import {CommentService} from '../services/comment.service';
 
 // Component decorator
@@ -12,9 +12,9 @@ import {CommentService} from '../services/comment.service';
 })
 export class CommentComponent implements OnInit{
 
-    @Input() channelName: string;
+    @Input() channelID: string;
 
-    private model = new Comment('', '', new Date,'');
+    private model = new Comment();
     private comments: Comment[] = [];
     private comment :Comment;
 
@@ -22,25 +22,27 @@ export class CommentComponent implements OnInit{
     }
 
     ngOnInit(): void {
-        this.commentService.getCommentAdded(this.channelName).subscribe(
+        this.commentService.getComments(this.channelID).subscribe(
+            comments => {
+                this.comments = comments;
+            },
+            err =>{
+                console.log(err);
+            }
+        );
+        this.commentService.getCommentAdded(this.channelID).subscribe(
             comment => {
-                console.log(this.channelName);
-                console.log(comment);
                 this.comments.push(comment);
             }
         );
     }
     sendMessage(){
-        this.model.channel = this.channelName;
-        this.commentService.addComment(this.model).subscribe(
-            comment =>{
-                this.model = new Comment('','',new Date,'');
-                console.log(comment)
-                console.log(this.comments)
 
+        this.commentService.addComment(this.model,this.channelID).subscribe(
+            comment =>{
+                this.model = new Comment();
             },
             err => {
-                // Log errors if any
                 console.log(err);
             });
       }

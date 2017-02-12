@@ -1,1 +1,16 @@
-<h1> test </h1>
+<div> <span> <h3> New Channel</h3> </span></div>
+<form (ngSubmit)="createChannel()">
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon" id="program-hour"><span class="glyphicon glyphicon-user"></span></span>
+            <input type="text" class="form-control" placeholder="name" [(ngModel)]="channel.name" name="name">
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon" id="program-name"><span class="glyphicon glyphicon-user"></span></span>
+            <input type="text" class="form-control" placeholder="url" [(ngModel)]="channel.url" name="url">
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary btn-block">Add</button>
+    </div>
+</form>

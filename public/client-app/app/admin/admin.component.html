@@ -1,9 +1,16 @@
 <div class="row">
-    <div class="col-md-4">
-        <li class="active" ><a href="#" routerLink="/admin/newChannel">new channel </a></li>
-        <li class="active" ><a href="#" routerLink="/admin">channels</a></li>
+    <div class="col-md-2">
+        <div class="card" style="height: 82vh; margin-left: 6px;padding-left: 10px;">
+            <span> <h3> Menu </h3> </span>
+            <span ><a href="#" routerLink="/admin/newChannel">new channel </a></span>
+            <br>
+            <span ><a href="#" routerLink="/admin">channels</a> </span>
+
+        </div>
     </div>
-    <div class=" col-md-8">
-        <router-outlet></router-outlet>
+    <div class=" col-md-10">
+        <div class="card" style="height: 82vh">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>

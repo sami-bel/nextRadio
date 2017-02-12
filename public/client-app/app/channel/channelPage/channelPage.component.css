@@ -1,15 +1,24 @@
 
 .player{
-    border: 1px solid #002A80;
+    /*border: 1px solid #002A80;*/
     height: 71vh;
 }
 .temps-fort{
-    border: 2px solid #c3325f;
+    /*border: 2px solid #c3325f;*/
     height: 16vh;
     overflow: auto;
+    background-color: #f9f9f9;
 }
 .comment{
-    border: 2px solid #b03911;
+    /*border: 2px solid #b03911;*/
+    margin: -6px;
+    padding: 2px;
     height: 88vh;
     overflow: auto;
+    background-color: #f9f9f9;
+}
+.menu{
+    height: 87vh;
+    background-color: #f9f9f9;
+    margin-left: 10px;
 }

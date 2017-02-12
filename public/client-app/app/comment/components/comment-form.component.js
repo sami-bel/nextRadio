@@ -18,7 +18,7 @@ var CommentFormComponent = (function () {
     function CommentFormComponent(commentService) {
         this.commentService = commentService;
         // Local properties
-        this.model = new comment_1.Comment('', '');
+        this.model = new comment_1.Comment();
         this.editing = false;
     }
     CommentFormComponent.prototype.submitComment = function () {
@@ -34,7 +34,7 @@ var CommentFormComponent = (function () {
             // Emit list event
             emitter_service_1.EmitterService.get(_this.listId).emit(comments);
             // Empty model
-            _this.model = new comment_1.Comment('', '');
+            _this.model = new comment_1.Comment();
             // Switch editing status
             if (_this.editing)
                 _this.editing = !_this.editing;

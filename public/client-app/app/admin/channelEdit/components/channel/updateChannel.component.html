@@ -1,0 +1,23 @@
+<div> <span> <h3> Update Channel</h3> </span></div>
+<form *ngIf ="!update" (ngSubmit)="updateChannel()">
+ <div class="form-group">
+  <div class="input-group">
+   <span class="input-group-addon" id="program-hour"><span class="glyphicon glyphicon-user"></span></span>
+   <input type="text" class="form-control" placeholder="name" [(ngModel)]="channel.name" name="name">
+  </div>
+  <br />
+  <div class="input-group">
+   <span class="input-group-addon" id="program-name"><span class="glyphicon glyphicon-user"></span></span>
+   <input type="text" class="form-control" placeholder="url" [(ngModel)]="channel.url" name="url">
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary btn-block">update</button>
+ </div>
+</form>
+
+<div class="form-group" *ngIf ="update">
+    name:  <span>{{channel?.name}}</span>
+    url:   <span>{{channel?.url}}</span>
+</div>
+
+

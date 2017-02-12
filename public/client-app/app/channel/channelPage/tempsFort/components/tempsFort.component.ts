@@ -1,39 +1,41 @@
-import {Component, OnInit, OnChanges} from '@angular/core';
+import {Component, OnInit, OnChanges, Input} from '@angular/core';
 
 import {ActivatedRoute, Params} from "@angular/router";
+import {TempsFortService} from "../services/tempsFort.service";
+import {TempsFort} from "../../../../models/tempsFort";
 
 @Component({
     selector: 'ng-tempsFort',
-    template:`<div >
-                    <!--<div *ngFor="let comment of comments" class="message-box" >-->
-                    <div class="message-box" >
-                         <span> samidgfkemlkk djklsdjl </span> :
-                    </div>
-                    <div class="message-box" >
-                         <span> sami </span> 
-                    </div>
-                    <div class="message-box" >
-                         <span> houhou </span> 
-                    </div>
-                    <div class="message-box" >
-                         <span> houhou </span> 
-                    </div>
-              </div>
-             
-        `,
-    // styles:[`.test { margin-left: 0px; overflow: auto;}`]
-    // styleUrls:['client-app/app/channel/channelPage/channelPage.component.css']
+    templateUrl:'/client-app/app/channel/channelPage/tempsFort/components/tempsFort.component.html',
+
 })
 
 export class TempsFortComponent implements OnInit{
 
     private name : string;
+    private tempsFortList :TempsFort[] = [];
+    @Input () private channelID : string
 
-    constructor(private route: ActivatedRoute) {
+    constructor(private route: ActivatedRoute, private tempsFortsService: TempsFortService) {
 
     }
+
+
     ngOnInit(){
-        // this.route.params.subscribe(params => { this.name = params['name']});
+
+        this.tempsFortsService.getTempsFort(this.channelID).subscribe(
+            tempsFortList => {
+                this.tempsFortList = tempsFortList;
+            },
+            err =>{
+                console.log(err);
+            }
+        );
+        this.tempsFortsService.getTempsFortAdded(this.channelID).subscribe(
+            tempsFort => {
+                this.tempsFortList.push(tempsFort);
+            }
+        );
 
     }
 

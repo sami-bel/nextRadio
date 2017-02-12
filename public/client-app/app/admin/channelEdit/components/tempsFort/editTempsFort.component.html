@@ -1,0 +1,13 @@
+<form (ngSubmit)="submitTempsFort()">
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon" id="program-hour"><span class="glyphicon glyphicon-user"></span></span>
+            <input type="text" class="form-control" placeholder="heure" [(ngModel)]="tempsFort.hour" name="hour">
+        </div>
+        <br />
+        <textarea class="form-control" rows="3" placeholder="Text" [(ngModel)]="tempsFort.description" name="description"></textarea>
+        <br />
+        <button *ngIf="!editing" type="submit" class="btn btn-primary btn-block">Add</button>
+        <button *ngIf="editing" type="submit" class="btn btn-warning btn-block">Update</button>
+    </div>
+</form>

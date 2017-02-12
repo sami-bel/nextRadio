@@ -9,22 +9,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require("@angular/router");
+var channelPage_service_1 = require("./channelPage.service");
+var platform_browser_1 = require("@angular/platform-browser");
 var ChannelPlayerComponent = (function () {
-    function ChannelPlayerComponent(route) {
-        this.route = route;
+    function ChannelPlayerComponent(channelPage, sanitizer) {
+        this.channelPage = channelPage;
+        this.sanitizer = sanitizer;
     }
     ChannelPlayerComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.route.params.subscribe(function (params) { _this.name = params['name']; });
+        this.channelPage.getChannel(this.channelID).subscribe(function (channel) {
+            console.log('sami');
+            _this.url = _this.sanitizer.bypassSecurityTrustResourceUrl(channel.url);
+            console.log(_this.url);
+        }, function (err) { console.log(err); });
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], ChannelPlayerComponent.prototype, "channelID", void 0);
     ChannelPlayerComponent = __decorate([
         core_1.Component({
             selector: 'ng-player',
-            template: "<div class=\"player-container\">\n                 <iframe class=\"player-video\" frameborder=\"0\" width=\"480\" height=\"270\" src=\"//www.dailymotion.com/embed/video/xgz4t1\" allowfullscreen></iframe><br />\n              </div>     \n        ",
+            template: "<div class=\"player-container\">\n                 <iframe class=\"player-video\" frameborder=\"0\" width=\"480\" height=\"270\"[src]=\"url\" allowfullscreen></iframe><br />\n              </div>     \n        ",
             styles: [".player-video {width:100%; height: 100%} .player-container{ height: 100%}"]
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [channelPage_service_1.ChannelPageService, platform_browser_1.DomSanitizer])
     ], ChannelPlayerComponent);
     return ChannelPlayerComponent;
 }());

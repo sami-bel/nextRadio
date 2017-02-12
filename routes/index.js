@@ -8,6 +8,9 @@ router.get('/', function(req, res, next) {
   else
     res.redirect('/auth/signin');
 });
+router.get(function(req, res){
+    res.redirect('/');
+});
 router.get('/test', function(req, res, next) {
     res.json([{sami:"test"}]);
 });

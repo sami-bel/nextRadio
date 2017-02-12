@@ -6,7 +6,7 @@ import {ChannelPageComponent} from './channelPage/channelPage.component'
 
 const channelRoutes: Routes = [
     { path: 'channels',  component:ChannelsListComponent  },
-    { path: 'channel/:name', component: ChannelPageComponent }
+    { path: 'channel/:id', component: ChannelPageComponent }
 ];
 
 @NgModule({

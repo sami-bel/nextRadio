@@ -6,8 +6,20 @@ import {EmitterService} from "../../../emitter.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-    template:`<h1> List Channels</h1>
-              <div *ngFor="let channel of channels"><a (click)="onSelect(channel.name)">{{channel.name}}</a></div>  
+    template:`<div class="container-fluid">
+               
+              
+              <div  *ngFor="let channel of channels" class="card col-md-2" style="width: 20rem;">
+                <img class="card-img-top" style="width:100%;"src="/images/tv/tv.png" alt="Card image cap">
+                <div class="card-block">
+                    <h4 class="card-title">{{channel.name}}</h4>
+                    <p class="card-text"> Description </p>
+                    <a (click)="onSelect(channel._id)" class="btn btn-primary"> Watch </a>
+                </div>
+              </div>
+              </div>
+
+ 
         `
 })
 
@@ -29,8 +41,8 @@ export class ChannelsListComponent implements OnInit,OnChanges{
             );
 
     }
-    onSelect(name:string) {
-        this.router.navigate(['/channel', name]);
+    onSelect(id:string) {
+        this.router.navigate(['/channel', id]);
     }
     ngOnChanges(){
         EmitterService.get(this.listChannelEvent).emit(this.channels)

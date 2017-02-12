@@ -1,0 +1,9 @@
+<p *ngIf="programs.length == 0"><span>There is no any program</span><br/></p>
+<div class="card">
+    <ul class="list-group list-group-flush" >
+        <li class="list-group-item" *ngFor="let program of programs">
+            <span>{{program.hour}} </span>:<span> {{program.name}}</span><br/>
+            <span>{{program.description}}</span>
+        </li>
+    </ul>
+</div>

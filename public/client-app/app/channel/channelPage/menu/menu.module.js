@@ -13,7 +13,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var menu_component_1 = require('./components/menu.component');
-var program_comonent_1 = require('./components/program.comonent');
+var program_component_1 = require('./components/program.component');
 var channels_service_1 = require('./services/channels.service');
 var MenuModule = (function () {
     function MenuModule() {
@@ -27,13 +27,13 @@ var MenuModule = (function () {
                 http_1.JsonpModule,
             ],
             declarations: [
-                menu_component_1.MenuComponent, program_comonent_1.ProgramComponent
+                menu_component_1.MenuComponent, program_component_1.ProgramComponent
             ],
             providers: [
                 channels_service_1.ChannelsService
             ],
             exports: [
-                menu_component_1.MenuComponent, program_comonent_1.ProgramComponent
+                menu_component_1.MenuComponent, program_component_1.ProgramComponent
             ]
         }), 
         __metadata('design:paramtypes', [])

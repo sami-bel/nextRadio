@@ -2,6 +2,8 @@ import{Component, OnInit} from '@angular/core'
 import {AdminChannelService} from "../adminChannel.service";
 import {Channel} from "../../models/channel";
 import {ChannelsListService} from "../../shard/service/channelsList.service";
+import {Router} from "@angular/router";
+import {EmitterService} from "../../emitter.service";
 
 @Component({
     selector: 'admin-channelList',
@@ -10,7 +12,7 @@ import {ChannelsListService} from "../../shard/service/channelsList.service";
 export class ChannelsListComponent implements OnInit{
 
     private channels : Array<Channel>
-    constructor(private adminChannel: AdminChannelService, private channelsListService :ChannelsListService){
+    constructor(private adminChannel: AdminChannelService, private channelsListService :ChannelsListService, private router :Router){
 
     }
     ngOnInit(){
@@ -18,6 +20,10 @@ export class ChannelsListComponent implements OnInit{
             channels => {
                 this.channels = channels;
             }
-        );
+        )
+    }
+    onSelect(channel:Channel){
+        this.adminChannel.sendChannelToOtherComponent(channel);
+        this.router.navigate(['/admin/editChannel']);
     }
 }

@@ -14,7 +14,7 @@ var channelsList_component_1 = require('./channelsList/components/channelsList.c
 var channelPage_component_1 = require('./channelPage/channelPage.component');
 var channelRoutes = [
     { path: 'channels', component: channelsList_component_1.ChannelsListComponent },
-    { path: 'channel/:name', component: channelPage_component_1.ChannelPageComponent }
+    { path: 'channel/:id', component: channelPage_component_1.ChannelPageComponent }
 ];
 var ChannelRoutingModule = (function () {
     function ChannelRoutingModule() {

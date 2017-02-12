@@ -1,0 +1,21 @@
+<div class="active" style="float: right; margin: 7px 12px;" > <span class="glyphicon glyphicon-plus" style="color: #1dd1f5;"></span><a href="#"  [routerLink]="['/admin/editChannel/newProgram',channelId]">New program</a></div>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>heure</th>
+        <th>description</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let program of programs">
+        <td>{{program.name}}</td>
+        <td>{{program.hour}}</td>
+        <td>{{program.description}}</td>
+
+    </tr>
+    </tbody>
+</table>
+
